@@ -86,5 +86,6 @@ int main()
             L_Ptr = L_Ptr->next;         //指针沿着节点前进
         }
     }
+    //第一遍编码有问题
     return 0;
 }
