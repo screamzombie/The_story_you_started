@@ -26,7 +26,7 @@ int main()
     int *P_tr_b = &b; //和这样几乎等用
     P_b = 6;
     cout << b << endl;
-    *P_tr_b = 7; //可以看代码运行结果
+    *P_tr_b = 7;   //可以看代码运行结果
     cout << b << endl;
     return 0;
 }
