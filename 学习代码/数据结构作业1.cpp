@@ -1,6 +1,5 @@
 #include <iostream>    //不要吐槽，毕竟环境是C++89版本
 #include <vector>
-#include <algorithm>
 using namespace std;
 vector<int>::iterator ins;
 void MakeVector(vector<int> &T)  //create vector
