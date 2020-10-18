@@ -1,6 +1,6 @@
-//循环队列的C++实现
+//循锟斤拷锟斤拷锟叫碉拷C++实锟斤拷
 #include <iostream>
-#define MAX 10 //这个队列的最大长度
+#define MAX 10 //锟斤拷锟斤拷锟斤拷械锟斤拷锟襟长讹拷
 using namespace std;
 
 int test[MAX] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -9,37 +9,37 @@ struct SQ
 {
     int start;
     int end;
-    int *space; //用来申请内存的指针
+    int *space; //锟斤拷锟斤拷锟斤拷锟斤拷锟节达拷锟街革拷锟?
 };
 
 bool IsFull(SQ &s)
 {
-    if ((s.end == MAX and s.start == 0) or (s.start - s.end == 1)) //俩种情况都是满的
+    if ((s.end == MAX and s.start == 0) or (s.start - s.end == 1)) //锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟?
         return true;
     return false;
 }
-//这个地方值得思考
-bool IsEmpty(SQ &s) //有三种情况说明这个队列是空的
+//锟斤拷锟斤拷胤锟街碉拷锟剿硷拷锟?
+bool IsEmpty(SQ &s) //锟斤拷锟斤拷锟斤拷锟斤拷锟剿碉拷锟斤拷锟斤拷锟斤拷锟斤拷锟角空碉拷
 {
-    if ((s.end == 0 and s.start == 0) or (s.end == 0 and s.start == MAX) or (s.end - s.start == 0)) //也就是俩者都是0才算空
-        return true;                                                                                //俩者相等不能说明空吧
+    if ((s.end == 0 and s.start == 0) or (s.end == 0 and s.start == MAX) or (s.end - s.start == 0)) //也锟斤拷锟斤拷锟斤拷锟竭讹拷锟斤拷0锟斤拷锟斤拷锟?
+        return true;                                                                                //锟斤拷锟斤拷锟斤拷炔锟斤拷锟剿碉拷锟斤拷瞻锟?
     return false;
 }
 
-void push(SQ &s, int item) //先进去的肯定是放在前面
+void push(SQ &s, int item) //锟饺斤拷去锟侥肯讹拷锟角凤拷锟斤拷前锟斤拷
 {
     if (!IsFull(s))
     {
-        *s.space = item;                             //那么问题来了，s.space 是不能不限的增加下去的，有时候会需要它到前面去
-        if (s.end - s.start != MAX and s.end == MAX) //说明前面还有空余,并且后面的也用掉了
+        *s.space = item;                             //锟斤拷么锟斤拷锟斤拷锟斤拷锟剿ｏ拷s.space 锟角诧拷锟杰诧拷锟睫碉拷锟斤拷锟斤拷锟斤拷去锟侥ｏ拷锟斤拷时锟斤拷锟斤拷锟揭?锟斤拷锟斤拷前锟斤拷去
+        if (s.end - s.start != MAX and s.end == MAX) //说锟斤拷前锟芥还锟叫匡拷锟斤拷,锟斤拷锟揭猴拷锟斤拷锟揭诧拷玫锟斤拷锟?
         {
-            s.space -= s.end; //把space移到前面去
-            s.end = 0;        //重新赋值为0
+            s.space -= s.end; //锟斤拷space锟狡碉拷前锟斤拷去
+            s.end = 0;        //锟斤拷锟铰革拷值为0
         }
         else
         {
-            s.space++; //指针++
-            s.end++;   //结尾索引++
+            s.space++; //指锟斤拷++
+            s.end++;   //锟斤拷尾锟斤拷锟斤拷++
         }
     }
     else
@@ -48,11 +48,11 @@ void push(SQ &s, int item) //先进去的肯定是放在前面
 
 int pop(SQ &s)
 {
-    if (!IsEmpty(s)) //首先肯定是不能空的
+    if (!IsEmpty(s)) //锟斤拷锟饺肯讹拷锟角诧拷锟杰空碉拷
     {
-        int temp = *(s.space + s.start - s.end); //不需要讨论
-        if (s.start != MAX)                      //不在尾部才可以加，否则的话你要跑到前面去
-            s.start++;                           //在这里你不能直接加
+        int temp = *(s.space + s.start - s.end); //锟斤拷锟斤拷要锟斤拷锟斤拷
+        if (s.start != MAX)                      //锟斤拷锟斤拷尾锟斤拷锟脚匡拷锟皆加ｏ拷锟斤拷锟斤拷幕锟斤拷锟揭?锟杰碉拷前锟斤拷去
+            s.start++;                           //锟斤拷锟斤拷锟斤拷锟姐不锟斤拷直锟接硷拷
         else
             s.start = 0;
         return temp;
@@ -74,7 +74,7 @@ int main()
     for (auto &&i : test)
         push(q, i);
     int cnt = 5;
-    while (cnt--) //当队列不是空的时候
+    while (cnt--) //锟斤拷锟斤拷锟叫诧拷锟角空碉拷时锟斤拷
     {
         int t = pop(q);
         cout << t << endl;
@@ -85,11 +85,11 @@ int main()
         if (IsFull(q))
             break;
     };
-    while (!IsEmpty(q)) //当队列不是空的时候
+    while (!IsEmpty(q)) //锟斤拷锟斤拷锟叫诧拷锟角空碉拷时锟斤拷
     {
         int t = pop(q);
         cout << t << endl;
     }
-    cout << "代码正常结束" << endl;
+    cout << "锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷" << endl;
     return 0;
 }

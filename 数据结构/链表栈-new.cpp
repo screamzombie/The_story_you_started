@@ -35,9 +35,9 @@ int pop(MyStack_P &t)
 void Transform()
 {
     int a = 16, b = 2;
-    cout << "请输入要转化的数" << endl;
+    cout << "please input a number" << endl;
     cin >> a;
-    cout << "请输入要转化的进制" << endl;
+    cout << "please input a k" << endl;
     cin >> b;
     MyStack_P head = nullptr;
     while (a)
